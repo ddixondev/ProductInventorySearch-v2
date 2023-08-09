@@ -1,0 +1,45 @@
+<html>
+
+<body style="background-color:darkcyan;">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <p>We are creating a JSON object</p>
+  <div id="products"></div>
+  <div id="imported"></div>
+
+  <script type="module">
+    import data from './products.json' assert {type: 'json'};
+
+
+  for (var i = 0; i < 1174; i++) {
+    var str = '';
+    str = str + '<div>';
+    str = str + '<img style="width:100px;height:100px;" src="' + data["product" + i].image + '">';
+    str = str + '<span style="display:block;color:#fff;background-color:darkorange;">' + data["product" + i].title + '</span>';
+    str = str + '<span style="display:block;color:#fff;background-color:darkblue">' + data["product" + i].brand + '</span>';
+    str = str + '<span style="display:block;color:#fff;background-color:darkmagenta">' + data["product" + i].price + '</span>';
+    str = str + '<span style="display:block;color:#fff;background-color:darkgreen">' + data["product" + i].description + '</span>';
+    str = str + '<br>';
+    str = str + '</div>';
+
+    $(str).appendTo('#imported');
+
+
+        //fetch('./products.json')
+        //.then((response) => response.json())
+        //.then((json) => console.log(json));
+
+        //import data from './products.json' assert { type: 'json' };
+        //console.log(data);
+    }
+    var number = 0;
+    console.log(data["product"+number].image);
+    //console.log(data[0])
+
+  </script>
+
+
+</body>
+
+</html>

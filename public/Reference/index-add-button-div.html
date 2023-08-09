@@ -1,0 +1,664 @@
+
+<!-- http://s159339317.onlinehome.us/cisco/index.htm -->
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="fabric.min.css">
+    <link rel="stylesheet" href="fabric.components.min.css">
+    <link rel="stylesheet" href="fabric_icons.css">
+    <script type="text/javascript" src="fabric.min.js"></script>
+    <!-- <script src="products-export.js"></script> -->
+    <script src="products-by-category-object.js"></script>
+    <script src="generate-paypal-buttons.js"></script>
+    <style>
+
+        .scaleit {
+            max-width: 100%;
+			height: auto;
+        }
+
+
+    
+                    body {
+                        font-family: "Segoe UI Web Light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+                    }
+    
+                    .ms-MessageBanner {
+                    text-align:left !important;
+                    margin-bottom:10px;
+                    }
+                    .ms-MessageBar {
+                    display: block !important; 
+                    }
+    
+                    .fieldEditBtn {
+                        display:inline-block;
+                        padding: 2px;
+                        cursor:pointer;
+                    }
+    
+                    .fieldEditBtn:hover {
+                    color:#7F00FF;
+                    }
+    
+                    .fieldVal{
+                    display:inline-block;
+                    padding:2px; 
+                    margin-left:3px;
+                    }
+    
+    
+                /*---------------begin css loader------------------------- */
+                :root {
+                --main-color: #111;
+                --loader-color: #4caf50;
+                --back-color: #a5d6a7;
+                --time: 3s;
+                --size: 3px;
+                }
+    
+                .eps2_loader {
+                background-color: var(--main-color);
+                overflow: hidden;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: flex-start;
+                z-index: 100000;
+                }
+    
+                .eps2_loader__element {
+                height: var(--size);
+                width: 100%;
+                background: var(--back-color);
+                }
+    
+                .eps2_loader__element:before {
+                content: "";
+                display: block;
+                background-color: var(--loader-color);
+                height: var(--size);
+                width: 0;
+                animation: getWidth var(--time) ease-in infinite;
+                }
+    
+                @keyframes getWidth {
+                100% {
+                    width: 100%;
+                }
+                }
+                /*---------------end css loader------------------------- */
+    
+    </style>
+
+<style>
+
+    body {
+      font-family: "Segoe UI Web Light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+      margin:0px !important;
+      padding:0px !important;
+      background-color: #f3f2f1;
+      margin: 0;
+    
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: 100%;
+      width: 100%;
+   
+    }
+
+        h1 {
+          font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans","Helvetica Neue", Arial, sans-serif;
+          font-size: 23px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 700;
+          line-height: 23px;
+        }
+        h3 {
+          font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans","Helvetica Neue", Arial, sans-serif;
+          font-size: 17px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 700;
+          line-height: 23px;
+        }
+        p {
+          font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans","Helvetica Neue", Arial, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 23px;
+        }
+
+        [contentEditable=true]:focus, .hyperlink:focus, [tabindex]:focus, ms-CommandButton:focus, ms-CommandButton--pivot:focus, a[href]:focus, area[href]:focus, button:focus, iframe:focus, input:focus, select:focus, textarea:focus {
+        outline: 0.1875rem dotted currentColor !important;
+    }
+
+
+
+  
+
+    
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon {
+    border-radius: 0px;
+    border: 0px;
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+}
+
+.ms-Icon {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    vertical-align: middle;
+}
+
+.pcm_panel_btn_class {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    float: right; 
+    margin-right: 35px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0;
+    color: #666;
+    font-size: 16px;
+    min-width: 10px;
+}
+
+.eps2_expand_panel {
+    max-width: 100% !important;
+}
+
+    /*---------------begin css loader------------------------- */
+    :root {
+      --main-color: #111;
+      --loader-color: #fc8824;
+      --back-color: #fff27e;
+      --time: 3s;
+      --size: 3px;
+    }
+
+    .pcm_loader {
+      background-color: var(--main-color);
+      overflow: hidden;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: flex-start;
+      z-index: 100000;
+    }
+
+    .pcm_loader__element {
+      height: var(--size);
+      width: 100%;
+      background: var(--back-color);
+    }
+
+    .pcm_loader__element:before {
+      content: "";
+      display: block;
+      background-color: var(--loader-color);
+      height: var(--size);
+      width: 0;
+      animation: getWidth var(--time) ease-in infinite;
+      
+    }
+
+    @keyframes getWidth {
+      100% {
+        width: 100%;
+      }
+    }
+    /*---------------end css loader------------------------- */
+
+
+
+.card {
+    cursor:pointer;
+    background-color:#fff;
+    border-left:2px solid #fff;
+    margin:10px;
+    padding:10px;
+    box-shadow: var(--shadow4,0 0 2px var(--colorNeutralShadowAmbient,rgba(0,0,0,.12)),0 2px 4px var(--colorNeutralShadowKey,rgba(0,0,0,.14)));
+}
+
+.card:hover{
+    border-left:2px solid blue;
+}
+
+.herobg {
+  background-image: linear-gradient(rgba(250, 250, 250, 0) 0%, rgba(250, 250, 250, 0.024) 5.26%, rgba(250, 250, 250, 0.055) 9.79%, rgba(250, 250, 250, 0.098) 13.69%, rgba(250, 250, 250, 0.145) 17.08%, rgba(250, 250, 250, 0.2) 20.04%, rgba(250, 250, 250, 0.267) 22.7%, rgba(250, 250, 250, 0.333) 25.16%, rgba(250, 250, 250, 0.408) 27.51%, rgba(250, 250, 250, 0.486) 29.87%, rgba(250, 250, 250, 0.57) 32.34%, rgba(250, 250, 250, 0.65) 35.02%, rgba(250, 250, 250, 0.737) 38.02%, rgba(250, 250, 250, 0.824) 41.45%, rgba(250, 250, 250, 0.914) 45.41%, rgb(250, 250, 250) 50%), url('visual_background_default_light.jpg');
+  background-size:cover;
+  background-position-x: center;
+}
+
+
+.ms-font-su {
+display:inline-block;
+}
+
+.subtext {
+  display: block;
+  background-color: rgb(96 125 139 / 13%);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.hyperlink {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.hyperlink:hover {
+ color:orange;
+}
+
+.productDesc {
+    text-align: justify;
+}
+
+</style>
+    </head>
+
+<body>
+	<!-- Replace "test" with your own sandbox Business account app client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AY2YSPPJD57C7onPnxQ7XoFYWOdCL85zNVqrVarfYWSEa39y-uz0V9SZw64Y1rjCpBHd9u3LLX9i9cbM&components=buttons&currency=USD&disable-funding=credit,card"></script>
+	
+    
+    <div style="display:none;" class="pcm_loader">
+        <div class="pcm_loader__element"></div>
+        </div>
+  <!-- <div id="searchArea" onclick="showmore(this);" class="productItem card"> -->
+  <div id="searchArea" class="productItem card">
+      
+     
+      <img src="banner.png" class="scaleit">
+      <div id="searchbar" class="ms-TextField">
+        <label class="ms-Label" style="display:none;"></label>
+        <input class="ms-TextField-field" type="text" value="" onkeypress="clickPress(event);" placeholder="Search by Product Code or Product Name...">
+      </div>
+
+   
+    <button style="width:100%;margin-top:15px;" id="beginSearch" onclick="search_products()" class="ms-Button ms-Button--primary">
+        <span class="ms-Button-label">Search</span> 
+      </button>
+  
+  </div>
+  <div id="searchResultsArea" class="productItem card">
+      <span id="searchResults" style="width:98%;margin-left:1%;padding:5px;color:white;background-color:gray;">Matching Products: </span>
+  </div>
+  
+  <div id="brandPickerArea" class="productItem card">
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="cisco" name="brand" value=0 checked>
+      <label for="cisco">Cisco</label>
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="hp" name="brand" value=1>
+      <label for="hp">HP</label>
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="netapp" name="brand" value=2>
+      <label for="netapp">NetApp</label>
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="western-digital" name="brand" value=3>
+      <label for="western-digital">Western Digital</label>
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="ibm" name="brand" value=4>
+      <label for="ibm">IBM</label>
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="intel" name="brand" value=5>
+      <label for="intel">Intel</label>
+      <input type="checkbox" onchange="brandcheckboxfunction(this)" id="sun" name="brand" value=6>
+      <label for="sun">SUN</label>
+  </div>
+  
+  <div id="categoryPickerArea" class="productItem card">
+      <input type="checkbox" onchange="checkboxfunction(this)" id="accessories" name="category" value=0 checked>
+      <label for="accessories">Accessories</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="adapters" name="category" value=1 checked>
+      <label for="adapters">Adapters</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="cisco-ucs" name="category" value=2 checked>
+      <label for="cisco-ucs">Cisco UCS</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="line-cards" name="category" value=3 checked>
+      <label for="line-cards">Line Cards</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="memory" name="category" value=4 checked>
+      <label for="memory">Memory</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="networking-engines" name="category" value=5 checked>
+      <label for="networking-engines">Networking Engines</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="optics" name="category" value=6 checked>
+      <label for="optics">Optics</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="phones" name="category" value=7 checked>
+      <label for="phones">Phones</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="processors" name="category" value=8 checked>
+      <label for="processors">Processors</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="routers" name="category" value=9 checked>
+      <label for="routers">Routers</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="routing-switching-modules" name="category" value=10 checked>
+      <label for="routing-switching-modules">Routing/Switching Modules</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="security" name="category" value=11 checked>
+      <label for="security">Security</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="servers" name="category" value=12 checked>
+      <label for="servers">Servers</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="server-hard-drives" name="category" value=13 checked>
+      <label for="server-hard-drives">Server Hard Drives</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="server-spares" name="category" value=14 checked>
+      <label for="server-spares">Server Spares</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="storage" name="category" value=15 checked>
+      <label for="storage">Storage</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="switches" name="category" value=16 checked>
+      <label for="switches">Switches</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="telepresence" name="category" value=17 checked>
+      <label for="telepresence">Telepresence</label>
+      <input type="checkbox" onchange="checkboxfunction(this)" id="wireless" name="category" value=18 checked>
+      <label for="wireless">Wireless</label>
+  </div>
+  <div id="imported"></div>
+
+  <script>
+
+   new fabric['Button']($('#beginSearch')[0]);
+   new fabric['TextField']($('#searchbar')[0]);
+   
+
+    //Global Variables
+     var categoryDictionary = {
+        0 : "accessories",
+        1 : "adapters",
+        2 : "cisco ucs",
+        3 : "line cards",
+        4 : "memory",
+        5 : "networking engines",
+        6 : "optics",
+        7 : "phones",
+        8 : "processors",
+        9 : "routers",
+        10 : "routing/switching modules",
+        11 : "security",
+        12 : "servers",
+        13 : "server hard drives",
+        14 : "server spares",
+        15 : "storage",
+        16 : "switches",
+        17 : "telepresence",
+        18 : "wireless"
+    };
+    
+    var brandDictionary = {
+        0 : "cisco",
+        1 : "hp",
+        2 : "netapp",
+        3 : "western digital",
+        4 : "ibm",
+        5 : "intel",
+        6 : "sun"
+    }
+    
+    var categorySelector = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+    
+    var brandSelector = [1,0,0,0,0,0,0]
+    
+    //console.log(categorySelector);
+    
+    //console.log(Object.keys(categoryDictionary).length);
+    //console.log(categoryDictionary[15]);
+    
+    //var matched = [];
+    
+       //Search Function
+
+
+       function clickPress(event) {
+           
+
+            if (event.keyCode == 13 || event.keyCode == "13") {
+                // do something
+                search_products();
+            }
+        }
+
+
+    function search_products() {
+        $('#searchResults').text("Matching Products: ");
+        console.log('search products');
+
+        var input = $('#searchbar').find('input').val();
+        input = input.toLowerCase();
+        input = input.trim();
+
+        $('#searchbar').find('input').blur();
+
+        /*
+        if (input == "cisco" || input == "the" || input == "and" ){
+            return;
+        }
+        */
+        if (input.length < 3){
+            
+            not_found();
+            return;
+        }
+
+        //input=input.toLowerCase();
+        //let x = document.getElementByClassName('animals');
+        var x = data;
+        var matched = [];
+        
+        console.log(input);
+        //console.log("Raw Title:" + x[0].title);
+        //console.log("Title to LowerCase:" + x[0].title.toLowerCase());
+        //console.log(Object.keys(x).length);
+        
+        for (i = 0; i < Object.keys(x).length; i++) {
+            if(x[i].title.toLowerCase().includes(input))
+            {
+                //console.log("if: " + input);
+               //not_found();
+               
+                    for(j = 0; j < categorySelector.length; j++) {
+                        if(categorySelector[j] == 1)
+                        {
+
+                            if(categoryDictionary[j] == x[i].category.toLowerCase())
+                            {
+                                for(k = 0; k < brandSelector.length; k++)
+                                {
+                                    if(brandSelector[k] == 1)
+                                    {
+                                        if(brandDictionary[k] == x[i].brand.toLowerCase())
+                                        {
+                                            matched.push(i);                                  
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+               
+               //matched.push(i);
+               //console.log("Matching Products" + matched);
+               //console.log("current match: " + x[i].title.toLowerCase());
+            }
+            else {
+                //console.log("Not a match");
+                //matched.push(i);
+                //console.log("Matching Products" + matched);
+            }
+        }
+            
+        if(Array.isArray(matched) && matched.length)
+        {
+            //console.log("Found Something");
+            show_matches(matched);     
+        }
+        else
+        {
+            not_found();
+        }    
+    }
+    //import data from './products.json' assert {type: 'json'};
+
+  function not_found() {
+      var str = '';
+      str = str + '<div class="productItem card">';
+      str = str + 'Not Found';
+      str = str + '<br>';
+      str = str + '</div>';
+    
+      //$(str).appendTo('#imported');
+      $('#imported').html(str);
+      $('#searchResults').text("Matching Products: ");
+  }
+  
+  function show_matches(products) {
+      
+      var matches = products;
+      //matched = [];
+      console.log("Matches.length: " + matches.length);
+      console.log("matches" + matches)
+      //console.log("matches[0]" + matches[0]);
+      //console.log("matches[1]" + matches[1]);
+      var str = '';
+      for (var i = 0; i < matches.length; i++) {
+          //var str = '';
+          str = str + '<div onclick="showmore(this);" class="productItem card">';
+          str = str + '<img class="productImage" style="width:200px;height:auto;margin-bottom:15px;" src="' + data[matches[i]].image + '">';
+          str = str + '<span class="productTitle" style="display:block;background-color: #607D8B;padding: 5;border-radius: 5px;color:#fff;">' + data[matches[i]].title + '</span>';
+          str = str + '<span class="ms-font-l productPrice" style="display:block;">' + data[matches[i]].price + '</span>';
+          str = str + '<span class="productDesc" style="display:none;">' + data[matches[i]].description + '</span>';
+          str = str + '<span class="productCat" style="display:none;">' + data[matches[i]].category + '</span>';
+          str = str + '<br>';
+          str = str + '</div>';
+      }
+
+      $('#imported').html(str);
+      $('#searchResults').text("Matching Products: " + matches.length);
+  } 
+  
+         
+        
+//Check box area
+function checkboxfunction(obj) { 
+    if($(obj).is(":checked")){ 
+        categorySelector[obj.value] = 1;
+        search_products(); 
+    }else{ 
+        categorySelector[obj.value] = 0;
+        search_products();
+    }
+}
+
+function brandcheckboxfunction(obj) { 
+    if($(obj).is(":checked")){ 
+        brandSelector[obj.value] = 1;
+        search_products(); 
+    }else{ 
+        brandSelector[obj.value] = 0;
+        search_products();
+    }
+}
+
+
+    //var number = 0;
+    //console.log(data[number].image);
+    //console.log(data[0])
+
+//this function is used to show more about Enterprise Services or Solutions
+function showmore(obj){
+
+        //destroy previous panels 
+        $('#ms-PanelSettings').remove();
+        var price = $(obj).find('.productPrice').text();
+        var title = $(obj).find('.productTitle').text();
+        var image = $(obj).find('.productImage').attr('src');
+        var desc = $(obj).find('.productDesc').html();
+        var buynow = '<button style="width:100%;margin-top:15px;margin-bottom:15px;" class="ms-Button ms-Button--primary"><span class="ms-Button-label">Buy Now</span> </button>';
+        var cat = $(obj).find('.productCat').text();
+        //append panels
+        var pnl = '';
+
+        pnl = pnl + '<div>';
+        pnl = pnl + '    <div id="ms-PanelSettings" class="ms-Panel ms-Panel--xl">';
+        pnl = pnl + '        <button onclick="pcm_panel_expand();" class="pcm_panel_btn_expand pcm_panel_btn_class ms-Button ms-Button--hero"><span class="ms-Button-icon"><i class="ms-Icon ms-Icon--PopExpand"></i></span></button>';
+        pnl = pnl + '        <button style="display:none;" onclick="pcm_panel_restore();" class="pcm_panel_btn_restore pcm_panel_btn_class ms-Button ms-Button--hero"><span class="ms-Button-icon"><i class="ms-Icon ms-Icon--BackToWindow"></i></span></button>';
+        pnl = pnl + '        <button class="ms-Panel-closeButton ms-PanelAction-close"> <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i> </button>'; 
+        pnl = pnl + '            <div class="ms-Panel-contentInner">'; 
+
+        pnl = pnl + '                <span  style="margin-bottom:10px;display:block;" class="ms-font-su ms-font-xxl panel-section-name">' + title + '</span>';
+
+        pnl = pnl + '              <br clear="all">';
+
+        pnl = pnl + '                    <div class="ms-Panel-content">';
+    
+                                            //stuff goes here
+        pnl = pnl + '                     <div style="width:300px;height:300px;background-image:url(' + image + ');background-repeat: no-repeat;background-size: 300px auto;position:relative;"><div style="color:#fff;background-color:rgba(0,0,0,0.7);width: 50%;padding: 20px;position: absolute;bottom: 30px;">' + price + '<br><b><i>' + cat + '</i></b></div></div>' + buynow + '<div style="text-align:justify;margin-top:15px;">'+ desc + '</div>';
+        //messagebar
+        //pnl = pnl + '                     <div class="ms-MessageBar ms-MessageBar--warning"><div class="ms-MessageBar-content"><div class="ms-MessageBar-icon"><i class="ms-Icon ms-Icon--Info"></i></div><div class="ms-MessageBar-text">Update the internal name of this section:</div></div></div>';
+        pnl = pnl + '                        <div id="custom-paypal-button-container">';
+        pnl = pnl + '                        </div>';
+        pnl = pnl + '              <br clear="all">';
+        pnl = pnl + '                        <div class="pcm_panel_main" style="height:300px;">';
+        pnl = pnl + '                        </div>';
+        pnl = pnl + '                    </div>';
+        pnl = pnl + '            </div>';
+        pnl = pnl + '    </div>';
+        pnl = pnl + ' </div>';
+
+
+        $(pnl).appendTo('body');
+
+
+//make the panel
+    new fabric['Panel']($('#ms-PanelSettings')[0]);
+
+
+
+}
+
+
+function pcm_panel_expand(){
+$('.ms-Panel.ms-Panel--xl').addClass('eps2_expand_panel');
+$('.pcm_panel_btn_expand').hide();
+$('.pcm_panel_btn_restore').show();
+}
+
+function pcm_panel_restore(){
+$('.ms-Panel.ms-Panel--xl').removeClass('eps2_expand_panel');
+$('.pcm_panel_btn_restore').hide();
+$('.pcm_panel_btn_expand').show();
+}
+
+function pcm_processing(){
+    try{
+      $('.pcm_loader').fadeIn();
+      setTimeout(function(){	
+      $('.pcm_loader').fadeOut();	
+      }, 2500);	
+    }catch(e){
+      //do nothing
+    }
+}
+
+document.addEventListener("mousedown", pcm_processing);
+
+  </script>
+
+
+</body>
+
+</html>

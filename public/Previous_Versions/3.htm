@@ -1,0 +1,181 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="fabric.min.css">
+    <link rel="stylesheet" href="fabric.components.min.css">
+    <link rel="stylesheet" href="fabric_icons.css">
+    <script type="text/javascript" src="fabric.min.js"></script>
+    <style>
+    
+                    body {
+                        font-family: "Segoe UI Web Light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+                    }
+    
+                    .ms-MessageBanner {
+                    text-align:left !important;
+                    margin-bottom:10px;
+                    }
+                    .ms-MessageBar {
+                    display: block !important; 
+                    }
+    
+                    .fieldEditBtn {
+                        display:inline-block;
+                        padding: 2px;
+                        cursor:pointer;
+                    }
+    
+                    .fieldEditBtn:hover {
+                    color:#7F00FF;
+                    }
+    
+                    .fieldVal{
+                    display:inline-block;
+                    padding:2px; 
+                    margin-left:3px;
+                    }
+    
+    
+                /*---------------begin css loader------------------------- */
+                :root {
+                --main-color: #111;
+                --loader-color: #4caf50;
+                --back-color: #a5d6a7;
+                --time: 3s;
+                --size: 3px;
+                }
+    
+                .eps2_loader {
+                background-color: var(--main-color);
+                overflow: hidden;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: flex-start;
+                z-index: 100000;
+                }
+    
+                .eps2_loader__element {
+                height: var(--size);
+                width: 100%;
+                background: var(--back-color);
+                }
+    
+                .eps2_loader__element:before {
+                content: "";
+                display: block;
+                background-color: var(--loader-color);
+                height: var(--size);
+                width: 0;
+                animation: getWidth var(--time) ease-in infinite;
+                }
+    
+                @keyframes getWidth {
+                100% {
+                    width: 100%;
+                }
+                }
+                /*---------------end css loader------------------------- */
+    
+    </style>
+    </head>
+
+<body>
+
+  <div id="imported"></div>
+
+  <script type="module">
+    import data from './products.json' assert {type: 'json'};
+
+  for (var i = 0; i < 1174; i++) {
+    var str = '';
+    str = str + '<div onclick="showmore(this);" class="productItem">';
+    str = str + '<img class="productImage" style="width:100px;height:100px;" src="' + data["product" + i].image + '">';
+    str = str + '<span class="productTitle" style="display:block;color:#fff;background-color:darkorange;">' + data["product" + i].title + '</span>';
+    str = str + '<span style="display:block;color:#fff;background-color:darkblue">' + data["product" + i].brand + '</span>';
+    str = str + '<span style="display:block;color:#fff;background-color:darkmagenta">' + data["product" + i].price + '</span>';
+    str = str + '<span class="productDesc" style="display:block;color:#fff;background-color:darkgreen">' + data["product" + i].description + '</span>';
+    str = str + '<br>';
+    str = str + '</div>';
+
+    $(str).appendTo('#imported');
+
+
+        //fetch('./products.json')
+        //.then((response) => response.json())
+        //.then((json) => console.log(json));
+
+        //import data from './products.json' assert { type: 'json' };
+        //console.log(data);
+    }
+    
+    </script>
+
+    <script>
+    //var number = 0;
+    //console.log(data["product"+number].image);
+    //console.log(data[0])
+
+//this function is used to show more about Enterprise Services or Solutions
+function showmore(obj){
+
+        //destroy previous panels 
+        $('#ms-PanelSettings').remove();
+
+        var title = $(obj).find('.productTitle').text();
+        var image = $(obj).find('.productImage').attr('src');
+        var desc = $(obj).find('.productDesc').html();
+
+        //append panels
+        var pnl = '';
+
+        pnl = pnl + '<div>';
+        pnl = pnl + '    <div id="ms-PanelSettings" class="ms-Panel ms-Panel--xl">';
+        pnl = pnl + '        <button onclick="pcm_panel_expand();" class="pcm_panel_btn_expand pcm_panel_btn_class ms-Button ms-Button--hero"><span class="ms-Button-icon"><i class="ms-Icon ms-Icon--PopExpand"></i></span></button>';
+        pnl = pnl + '        <button style="display:none;" onclick="pcm_panel_restore();" class="pcm_panel_btn_restore pcm_panel_btn_class ms-Button ms-Button--hero"><span class="ms-Button-icon"><i class="ms-Icon ms-Icon--BackToWindow"></i></span></button>';
+        pnl = pnl + '        <button class="ms-Panel-closeButton ms-PanelAction-close"> <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i> </button>'; 
+        pnl = pnl + '            <div class="ms-Panel-contentInner">'; 
+
+        pnl = pnl + '                <span  style="margin-bottom:10px;display:block;" class="ms-font-su ms-font-xxl panel-section-name">' + title + '</span>';
+
+        pnl = pnl + '              <br clear="all">';
+
+        pnl = pnl + '                    <div class="ms-Panel-content">';
+                                            //stuff goes here
+        pnl = pnl + '                     <center><img style="width:300px;height:auto;" src="'+ image + '"></center>';
+
+                                            //messagebar
+        //pnl = pnl + '                     <div class="ms-MessageBar ms-MessageBar--warning"><div class="ms-MessageBar-content"><div class="ms-MessageBar-icon"><i class="ms-Icon ms-Icon--Info"></i></div><div class="ms-MessageBar-text">Update the internal name of this section:</div></div></div>';
+        pnl = pnl + '              <br clear="all">';
+        pnl = pnl + '                        <div class="pcm_panel_main">';
+        pnl = pnl + '                        </div>';
+        pnl = pnl + '                    </div>';
+        pnl = pnl + '            </div>';
+        pnl = pnl + '    </div>';
+        pnl = pnl + ' </div>';
+
+
+        $(pnl).appendTo('body');
+
+
+//make the panel
+    new fabric['Panel']($('#ms-PanelSettings')[0]);
+
+
+
+}
+
+
+
+  </script>
+
+
+</body>
+
+</html>

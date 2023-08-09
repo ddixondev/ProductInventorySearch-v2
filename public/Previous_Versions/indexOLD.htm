@@ -1,0 +1,397 @@
+
+<!-- http://s159339317.onlinehome.us/cisco/index.htm -->
+<!-- http://s159339317.onlinehome.us/cisco/cisco.zip -->
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="fabric.min.css">
+    <link rel="stylesheet" href="fabric.components.min.css">
+    <link rel="stylesheet" href="fabric_icons.css">
+    <script type="text/javascript" src="fabric.min.js"></script>
+    <style>
+    
+                    body {
+                        font-family: "Segoe UI Web Light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+                    }
+    
+                    .ms-MessageBanner {
+                    text-align:left !important;
+                    margin-bottom:10px;
+                    }
+                    .ms-MessageBar {
+                    display: block !important; 
+                    }
+    
+                    .fieldEditBtn {
+                        display:inline-block;
+                        padding: 2px;
+                        cursor:pointer;
+                    }
+    
+                    .fieldEditBtn:hover {
+                    color:#7F00FF;
+                    }
+    
+                    .fieldVal{
+                    display:inline-block;
+                    padding:2px; 
+                    margin-left:3px;
+                    }
+    
+    
+                /*---------------begin css loader------------------------- */
+                :root {
+                --main-color: #111;
+                --loader-color: #4caf50;
+                --back-color: #a5d6a7;
+                --time: 3s;
+                --size: 3px;
+                }
+    
+                .eps2_loader {
+                background-color: var(--main-color);
+                overflow: hidden;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: flex-start;
+                z-index: 100000;
+                }
+    
+                .eps2_loader__element {
+                height: var(--size);
+                width: 100%;
+                background: var(--back-color);
+                }
+    
+                .eps2_loader__element:before {
+                content: "";
+                display: block;
+                background-color: var(--loader-color);
+                height: var(--size);
+                width: 0;
+                animation: getWidth var(--time) ease-in infinite;
+                }
+    
+                @keyframes getWidth {
+                100% {
+                    width: 100%;
+                }
+                }
+                /*---------------end css loader------------------------- */
+    
+    </style>
+
+<style>
+
+    body {
+      font-family: "Segoe UI Web Light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+      margin:0px !important;
+      padding:0px !important;
+      background-color: #f3f2f1;
+      margin: 0;
+    
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: 100%;
+      width: 100%;
+   
+    }
+
+        h1 {
+          font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans","Helvetica Neue", Arial, sans-serif;
+          font-size: 23px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 700;
+          line-height: 23px;
+        }
+        h3 {
+          font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans","Helvetica Neue", Arial, sans-serif;
+          font-size: 17px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 700;
+          line-height: 23px;
+        }
+        p {
+          font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans","Helvetica Neue", Arial, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 23px;
+        }
+
+        [contentEditable=true]:focus, .hyperlink:focus, [tabindex]:focus, ms-CommandButton:focus, ms-CommandButton--pivot:focus, a[href]:focus, area[href]:focus, button:focus, iframe:focus, input:focus, select:focus, textarea:focus {
+        outline: 0.1875rem dotted currentColor !important;
+    }
+
+
+
+  
+
+    
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon {
+    border-radius: 0px;
+    border: 0px;
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+}
+
+.ms-Icon {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'FabricMDL2Icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    vertical-align: middle;
+}
+
+.pcm_panel_btn_class {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    float: right; 
+    margin-right: 35px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0;
+    color: #666;
+    font-size: 16px;
+    min-width: 10px;
+}
+
+.eps2_expand_panel {
+    max-width: 100% !important;
+}
+
+    /*---------------begin css loader------------------------- */
+    :root {
+      --main-color: #111;
+      --loader-color: #fc8824;
+      --back-color: #fff27e;
+      --time: 3s;
+      --size: 3px;
+    }
+
+    .pcm_loader {
+      background-color: var(--main-color);
+      overflow: hidden;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: flex-start;
+      z-index: 100000;
+    }
+
+    .pcm_loader__element {
+      height: var(--size);
+      width: 100%;
+      background: var(--back-color);
+    }
+
+    .pcm_loader__element:before {
+      content: "";
+      display: block;
+      background-color: var(--loader-color);
+      height: var(--size);
+      width: 0;
+      animation: getWidth var(--time) ease-in infinite;
+      
+    }
+
+    @keyframes getWidth {
+      100% {
+        width: 100%;
+      }
+    }
+    /*---------------end css loader------------------------- */
+
+
+
+.card {
+    cursor:pointer;
+    background-color:#fff;
+    border-left:2px solid #fff;
+    margin:10px;
+    padding:10px;
+    box-shadow: var(--shadow4,0 0 2px var(--colorNeutralShadowAmbient,rgba(0,0,0,.12)),0 2px 4px var(--colorNeutralShadowKey,rgba(0,0,0,.14)));
+}
+
+.card:hover{
+    border-left:2px solid blue;
+}
+
+.herobg {
+  background-image: linear-gradient(rgba(250, 250, 250, 0) 0%, rgba(250, 250, 250, 0.024) 5.26%, rgba(250, 250, 250, 0.055) 9.79%, rgba(250, 250, 250, 0.098) 13.69%, rgba(250, 250, 250, 0.145) 17.08%, rgba(250, 250, 250, 0.2) 20.04%, rgba(250, 250, 250, 0.267) 22.7%, rgba(250, 250, 250, 0.333) 25.16%, rgba(250, 250, 250, 0.408) 27.51%, rgba(250, 250, 250, 0.486) 29.87%, rgba(250, 250, 250, 0.57) 32.34%, rgba(250, 250, 250, 0.65) 35.02%, rgba(250, 250, 250, 0.737) 38.02%, rgba(250, 250, 250, 0.824) 41.45%, rgba(250, 250, 250, 0.914) 45.41%, rgb(250, 250, 250) 50%), url('visual_background_default_light.jpg');
+  background-size:cover;
+  background-position-x: center;
+}
+
+
+.ms-font-su {
+display:inline-block;
+}
+
+.subtext {
+  display: block;
+  background-color: rgb(96 125 139 / 13%);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.hyperlink {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.hyperlink:hover {
+ color:orange;
+}
+
+.productDesc {
+    text-align: justify;
+}
+
+</style>
+    </head>
+
+<body>
+    <div style="display:none;" class="pcm_loader">
+        <div class="pcm_loader__element"></div>
+        </div>
+
+  <div id="imported"></div>
+
+  <script type="module">
+    import data from './products.json' assert {type: 'json'};
+
+  for (var i = 0; i < 1174; i++) {
+    var str = '';
+    str = str + '<div onclick="showmore(this);" class="productItem card">';
+    str = str + '<img class="productImage" style="width:200px;height:auto;margin-bottom:15px;" src="' + data["product" + i].image + '">';
+    str = str + '<span class="productTitle" style="display:block;background-color: #607D8B;padding: 5;border-radius: 5px;color:#fff;">' + data["product" + i].title + '</span>';
+    //str = str + '<span style="display:block;color:#fff;background-color:darkblue">' + data["product" + i].brand + '</span>';
+    str = str + '<span class="ms-font-l productPrice" style="display:block;">' + data["product" + i].price + '</span>';
+    str = str + '<span class="productDesc" style="display:none;">' + data["product" + i].description + '</span>';
+    str = str + '<br>';
+    str = str + '</div>';
+    
+    $(str).appendTo('#imported');
+
+
+        //fetch('./products.json')
+        //.then((response) => response.json())
+        //.then((json) => console.log(json));
+
+        //import data from './products.json' assert { type: 'json' };
+        //console.log(data);
+    }
+    
+    </script>
+
+    <script>
+    //var number = 0;
+    //console.log(data["product"+number].image);
+    //console.log(data[0])
+
+//this function is used to show more about Enterprise Services or Solutions
+function showmore(obj){
+
+        //destroy previous panels 
+        $('#ms-PanelSettings').remove();
+        var price = $(obj).find('.productPrice').text();
+        var title = $(obj).find('.productTitle').text();
+        var image = $(obj).find('.productImage').attr('src');
+        var desc = $(obj).find('.productDesc').html();
+        var buynow = '<button style="width:100%;margin-top:15px;margin-bottom:15px;" class="ms-Button ms-Button--primary"><span class="ms-Button-label">Buy Now</span> </button>';
+
+        //append panels
+        var pnl = '';
+
+        pnl = pnl + '<div>';
+        pnl = pnl + '    <div id="ms-PanelSettings" class="ms-Panel ms-Panel--xl">';
+        pnl = pnl + '        <button onclick="pcm_panel_expand();" class="pcm_panel_btn_expand pcm_panel_btn_class ms-Button ms-Button--hero"><span class="ms-Button-icon"><i class="ms-Icon ms-Icon--PopExpand"></i></span></button>';
+        pnl = pnl + '        <button style="display:none;" onclick="pcm_panel_restore();" class="pcm_panel_btn_restore pcm_panel_btn_class ms-Button ms-Button--hero"><span class="ms-Button-icon"><i class="ms-Icon ms-Icon--BackToWindow"></i></span></button>';
+        pnl = pnl + '        <button class="ms-Panel-closeButton ms-PanelAction-close"> <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i> </button>'; 
+        pnl = pnl + '            <div class="ms-Panel-contentInner">'; 
+
+        pnl = pnl + '                <span  style="margin-bottom:10px;display:block;" class="ms-font-su ms-font-xxl panel-section-name">' + title + '</span>';
+
+        pnl = pnl + '              <br clear="all">';
+
+        pnl = pnl + '                    <div class="ms-Panel-content">';
+    
+                                            //stuff goes here
+        pnl = pnl + '                     <div style="width:300px;height:300px;background-image:url(' + image + ');background-repeat: no-repeat;background-size: 300px auto;position:relative;"><div style="color:#fff;background-color:rgba(0,0,0,0.7);width: 50%;padding: 20px;position: absolute;bottom: 30px;">' + price + '</div></div>' + buynow + '<div style="text-align:justify;margin-top:15px;">'+ desc + '</div>';
+        //messagebar
+        //pnl = pnl + '                     <div class="ms-MessageBar ms-MessageBar--warning"><div class="ms-MessageBar-content"><div class="ms-MessageBar-icon"><i class="ms-Icon ms-Icon--Info"></i></div><div class="ms-MessageBar-text">Update the internal name of this section:</div></div></div>';
+        pnl = pnl + '              <br clear="all">';
+        pnl = pnl + '                        <div class="pcm_panel_main" style="height:300px;">';
+        pnl = pnl + '                        </div>';
+        pnl = pnl + '                    </div>';
+        pnl = pnl + '            </div>';
+        pnl = pnl + '    </div>';
+        pnl = pnl + ' </div>';
+
+
+        $(pnl).appendTo('body');
+
+
+//make the panel
+    new fabric['Panel']($('#ms-PanelSettings')[0]);
+
+
+
+}
+
+
+function pcm_panel_expand(){
+$('.ms-Panel.ms-Panel--xl').addClass('eps2_expand_panel');
+$('.pcm_panel_btn_expand').hide();
+$('.pcm_panel_btn_restore').show();
+}
+
+function pcm_panel_restore(){
+$('.ms-Panel.ms-Panel--xl').removeClass('eps2_expand_panel');
+$('.pcm_panel_btn_restore').hide();
+$('.pcm_panel_btn_expand').show();
+}
+
+function pcm_processing(){
+    try{
+      $('.pcm_loader').fadeIn();
+      setTimeout(function(){	
+      $('.pcm_loader').fadeOut();	
+      }, 2500);	
+    }catch(e){
+      //do nothing
+    }
+}
+
+document.addEventListener("mousedown", pcm_processing);
+
+  </script>
+
+
+</body>
+
+</html>
