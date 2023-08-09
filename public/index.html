@@ -626,10 +626,13 @@ function showmore(obj){
 //make the panel
     new fabric['Panel']($('#ms-PanelSettings')[0]);
 
+ //Log price when showing selected item
+ console.log("Current Price Value: " + price.replace('$', ''));
+
 	//Generate PayPal Button with Imported Function
     generateButton(title);
     
-
+   
 }
 
 
