@@ -444,11 +444,28 @@ display:inline-block;
 
         $('#searchbar').find('input').blur();
 
-        /*
-        if (input == "cisco" || input == "the" || input == "and" ){
-            return;
+        
+        if (input == "racks"){
+            input = "rack";
         }
-        */
+
+
+        if (input == "servers"){
+            input = "server";
+        }
+
+        if (input == "phones"){
+            input = "phone";
+        }
+
+        if (input == "switches"){
+            input = "switch";
+        }
+
+        if (input == "cables"){
+            input = "cable";
+        }
+        
         if (input.length < 3){
             
             not_found();
